@@ -1,0 +1,31 @@
+### Post create product
+POST http://localhost:8080/api/v1/product
+content-type: application/json
+
+{
+  "code": "c-002",
+  "name": "product 2",
+  "stock": 10,
+  "price": 1000
+}
+
+### Put update product
+PUT http://localhost:8080/api/v1/product
+content-type: application/json
+
+{
+  "productId": 1,
+  "code": "c-001",
+  "name": "Product 1",
+  "stock": 100,
+  "price": 1000
+}
+
+### Get product by id
+GET http://localhost:8080/api/v1/product/1
+
+### Get all products
+GET http://localhost:8080/api/v1/product
+
+### Delete product by id
+DELETE http://localhost:8080/api/v1/product/2
