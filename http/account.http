@@ -1,0 +1,29 @@
+### Post create account
+POST http://localhost:8080/api/v1/account
+content-type: application/json
+
+{
+  "userId": 1,
+  "name": "Account 2",
+  "total": 1000.00
+}
+
+### Put update account
+PUT http://localhost:8080/api/v1/account
+content-type: application/json
+
+{
+  "accountId": 1,
+  "userId": 1,
+  "name": "Account 1",
+  "total": 2000
+}
+
+### Get account by id
+GET http://localhost:8080/api/v1/account/1
+
+### Get all accounts
+GET http://localhost:8080/api/v1/account
+
+### Delete account
+DELETE http://localhost:8080/api/v1/account/2
