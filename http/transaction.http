@@ -1,0 +1,38 @@
+### Post create transaction
+POST http://localhost:8080/api/v1/transaction
+Content-Type: application/json
+
+{
+  "account": {
+    "accountId": 2
+  },
+  "move": true,
+  "amount": 1000,
+  "description": "deposit for something account 2",
+  "dateTime": "2021-09-01"
+}
+
+### Put update transaction
+PUT http://localhost:8080/api/v1/transaction
+Content-Type: application/json
+
+{
+  "transactionId": 1,
+  "accountId": 1,
+  "move": true,
+  "amount": 1000,
+  "description": "deposit for something more",
+  "dateTime": "2021-09-01"
+}
+
+### Get transaction by Id
+GET http://localhost:8080/api/v1/transaction/1
+
+### Get all transactions
+GET http://localhost:8080/api/v1/transaction
+
+### Get transactions by Account Id
+GET http://localhost:8080/api/v1/transaction/account/2
+
+### Delete transaction by Id
+DELETE http://localhost:8080/api/v1/transaction/2
