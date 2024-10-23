@@ -1,11 +1,10 @@
 package pernogama.backend.model.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
+import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -13,9 +12,10 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@Builder
 @Entity
 @Table(name = "transactions")
-public class TransactionEntity {
+public class TransactionEntity implements Serializable {
 
     @Id
     @Column(name = "transaction_id")
@@ -25,7 +25,7 @@ public class TransactionEntity {
     @JoinColumn(name = "account_id", nullable = false)
     private AccountEntity account;
     @Column(name = "amount")
-    private double amount;
+    private BigDecimal amount;
     @Column(name = "move")
     private boolean move;
     @Column(name = "description")

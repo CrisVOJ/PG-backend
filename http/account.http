@@ -5,7 +5,7 @@ content-type: application/json
 {
   "userId": 1,
   "name": "Account 2",
-  "total": 1000.00
+  "balance": 0
 }
 
 ### Put update account
@@ -16,7 +16,7 @@ content-type: application/json
   "accountId": 1,
   "userId": 1,
   "name": "Account 1",
-  "total": 2000
+  "balance": 2000
 }
 
 ### Get account by id

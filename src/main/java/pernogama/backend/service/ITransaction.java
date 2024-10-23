@@ -1,5 +1,6 @@
 package pernogama.backend.service;
 
+import pernogama.backend.model.dto.TransactionDto;
 import pernogama.backend.model.entity.AccountEntity;
 import pernogama.backend.model.entity.TransactionEntity;
 
@@ -7,14 +8,14 @@ import java.util.List;
 
 public interface ITransaction {
 
-    TransactionEntity save(TransactionEntity transaction);
+    TransactionDto save(Long accountId, TransactionDto transactionDto);
 
-    TransactionEntity findById(Long id);
+    TransactionDto findById(Long id);
 
-    List<TransactionEntity> findAll();
+    List<TransactionDto> findAll();
 
-    List<TransactionEntity> findAllByAccount_AccountId(Long accountId);
+    List<TransactionDto> findAllByAccount_AccountId(Long accountId);
 
-    void delete(TransactionEntity transaction);
+    void deleteById(Long id, Long accountId);
 
 }

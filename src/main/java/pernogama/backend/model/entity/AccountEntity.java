@@ -1,18 +1,19 @@
 package pernogama.backend.model.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@Builder
 @Entity
 @Table(name = "accounts")
-public class AccountEntity {
+public class AccountEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +23,7 @@ public class AccountEntity {
     private int userId;
     @Column(name = "name")
     private String name;
-    @Column(name = "total")
-    private double total;
+    @Column(name = "balance")
+    private BigDecimal balance;
 
 }
